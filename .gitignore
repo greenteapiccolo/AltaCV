@@ -1,0 +1,13 @@
+pdfa.xmpi
+sample.aux
+sample.bcf
+sample.fdb_latexmk
+sample.fls
+sample.log
+sample.out
+sample.run.xml
+sample.synctex.gz
+sample.bbl
+Resume.*
+!Resume.tex
+*.pdf
