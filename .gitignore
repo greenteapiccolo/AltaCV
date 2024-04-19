@@ -8,6 +8,5 @@ sample.out
 sample.run.xml
 sample.synctex.gz
 sample.bbl
-Resume.*
-!Resume.tex
+Resume*
 *.pdf

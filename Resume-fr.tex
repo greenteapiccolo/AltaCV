@@ -1,0 +1,275 @@
+\documentclass[10.5pt,a4paper,ragged2e,withhyper]{altacv}
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" sample.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \usepackage{hyperref}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+% ...and the markers for the date/location for \cvevent
+% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
+% \renewcommand{\cvLocationMarker}{\faMapMarker*}
+
+
+% If your CV/résumé is in a language other than English,
+% then you probably want to change these so that when you
+% copy-paste from the PDF or run pdftotext, the location
+% and date marker icons for \cvevent will paste as correct
+% translations. For example Spanish:
+% \renewcommand{\locationname}{Ubicación}
+% \renewcommand{\datename}{Fecha}
+
+%% Use (and optionally edit if necessary) this .tex if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+\input{pubs-num.cfg}
+
+\AtBeginEnvironment{itemize}{\small}
+
+\begin{document}
+
+\name{Jacques Chi}
+\tagline{Développeur mid-senior, full-stack}
+%% You can add multiple photos on the left or right
+%\photoR{2.8cm}{Globe_High}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{
+  % TODO real data
+  \email{}
+  \phone{}
+  \location{Montréal, CANADA}
+  \linkedin{jacques-chi-500903621}
+  \github{greenteapiccolo}
+  \printinfo{\faThumbsUp}{Références (LinkedIn)}[https://www.linkedin.com/in/jacques-chi-500903621/details/recommendations/]
+\quote
+}
+
+\makecvheader
+
+\cvsection{Principalement sur..}
+\cvtag{React.js}
+\cvtag{Node.js}
+\cvtag{Java Spring}
+\cvtag{Python}
+\cvtag{Svelte}
+\cvtag{TypeScript}
+\cvtag{Bash}
+\cvtag{GitHub}
+
+\cvsection{Expérience}
+\cvevent{\textbf{Ingénieur Full Stack}}{Société Générale}{01-2022 -- 12-2023}{Montréal, Canada}
+\vspace{-.5\baselineskip}
+\begin{minipage}[t]{0.45\textwidth}
+  \vspace{0pt}
+  Projets (React.js et Java Spring Boot):
+  \begin{itemize}
+    \item Tableau de bord KPI avec des modules graphiques
+    \item Système de reporting avec des services planifiés automatiquement
+    \item Outils liés à l'ITSM (planificateur, détails, recherche, versionning) en format web
+    \item Outil web Break Glass avec gestion de droits
+    \item Tour de contrôle des applications, avec l'aide de GraphQL
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+  \vspace{0pt}
+  Technique:
+  \begin{itemize}
+    \item Utilisation de l'architecture hexagonale avec des design patterns associés et autres
+    \item Tests unitaires et d'intégration avec react-testing-library (UI) et JUnit (API)
+    \item Utilisation de plusieurs méthodes de cache et de threading pour améliorer les performances côté UI et API
+    \item Scripts Python planifiés avec Kubernetes Cron
+    \item Surveillance des performances des applications avec Kibana
+  \end{itemize}
+\end{minipage}
+
+\medskip
+Soft skills:
+\begin{itemize}
+  \item Organisation de connaissances, ateliers techniques et séances de résolution de problèmes collaboratives
+  \item Owner technique sur plusieurs projets
+  \item Mentorat sur certains aspects techniques
+  \item Livraison de POC incluant l'architecture, la collaboration, la planification et son développement
+  \item Obtention de la 2ème place au America Region Secure Coding Challenge
+\end{itemize}
+\begin{itshape}
+  \underline{Outils supplémentaires:}
+  \small{PostgreSQL, Vite, bootstrap etc.}
+\end{itshape}
+
+\divider
+
+\cvevent{\textbf{Développeur front-end}}{triPica}{10-2019 -- 11-2021}{Paris, France}
+\vspace{-.5\baselineskip}
+\begin{minipage}[t]{0.45\textwidth}
+  \vspace{0pt}
+  Projets (React.js et React Native):
+  \begin{itemize}
+    \item Application hybride B2C React Native pour iOS et Android
+    \item Console CRM en TypeScript React.js
+    \item Utilisation de l'internationalisation centralisée et transparente pour les applications web et mobiles
+    \item Travail sur les notifications push des applications mobiles
+    \item Intégration du système de paiement Stripe 3DSV2, sur le web et le mobile
+    \item Éditeur de template web avec Svelte
+    \item Intégration eKYC avec les bibliothèques mobiles natives de Thalès
+  \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+  \vspace{0pt}
+  Technique:
+  \begin{itemize}
+    \item Projets en conception monorepo avec certains patterns (Factory, State...)
+    \item Déploiement mobile avec Bitrise
+    \item Test de l'application web avec snapshots et Storybook
+    \item Utilisation de Redux.js et de Normalization pour gérer des données UI plus importantes
+    \item Débogage de bibliothèques externes et correction si nécessaire
+  \end{itemize}
+\end{minipage}
+
+\medskip
+Soft skills:
+\begin{itemize}
+  \item Collaboration avec des concepteurs UI/UX basés sur material-ui
+  \item Ownership de certaines fonctionnalités des applications
+\end{itemize}
+\begin{itshape}
+  \underline{Outils supplémentaires:}
+  \small{Jenkins, CircleCI, Bitrise etc.}
+\end{itshape}
+
+\divider
+
+\cvevent{\textbf{Stagiaire - développeur front-end}}{IBM}{01-2019 -- 07-2019}{Paris, France}
+Projet: application web de tableau de bord modulaire KPI avec react-grid-layout, mobX et d3.js
+
+\newpage
+\columnratio{0.7}
+% Commencer un paracolomne en 2 colonnes. Les colonnes gauche et droite passeront automatiquement aux pages suivantes si elles sont trop longues
+\begin{paracol}{2}
+
+\cvsection{Projets}
+\cvevent{Étude de tendance sur la réalité virtuelle / augmentée}{University of Neveda, Las Vegas}{05-2018 -- 07-2018}{Las Vegas, USA}
+Publication d'un article scientifique et \textbf{présentation à Munich pour la conférence AR \& VR 2019}
+\smallbreak
+\divider
+\cvevent{Gestion de pandémie avec tags connectés}{ESIEE Paris}{2018}{Paris, France}
+Développement de \textbf{modules bluetooth pour bracelets afin de simuler la localisation des patients avec intégration de scanner thermique FLIR}
+\smallbreak
+\divider
+\cvevent{Coupe de France de robotique}{ESIEE Paris}{2018}{Paris, France}
+Développement de l'\textbf{évitement de collision du robot avec MbedOS + Python et un Raspberry Pi}
+\smallbreak
+\divider
+\cvevent{Mesure des métriques de qualité d'expérience}{Laboratoire LISSI}{03-2016 -- 06-2016}{Vitry-sur-Seine, France}
+Travail sur \textbf{le streaming vidéo adaptatif avec DASH.js et une étude qualitative basée sur des interviews}
+
+\medskip
+\cvsection{Publications}
+\printinfo{\faUsers}{Actes de conférence}
+\smallbreak
+\textbf{Conférence AR \& VR 2019 à Munich, Allemagne}
+\smallbreak
+\smallbreak
+\printinfo{\faFile*[regular]}{Citation}
+\smallbreak
+\textbf{Augmented Reality and Virtual Reality}
+\smallbreak
+\url{https://doi.org/10.1007/978-3-030-37869-1}
+\medskip
+
+\cvsection{Une journée de ma vie}
+% Adapté de la réponse de @Jake sur http://tex.stackexchange.com/a/82729/226
+% \wheelchart{rayon extérieur}{rayon intérieur}{
+% liste séparée par des virgules de valeur/largeur du texte/couleur/détail}
+\wheelchart{1.5cm}{0.5cm}{%
+  1/10em/accent!30/Instrument Guqin,
+  1.5/10em/accent!45/Badminton,
+  2/10em/accent!60/Baby Foot,
+  2.5/10em/accent!75/undefined,
+  2.5/10em/accent!75/Geek et autre,
+  1.5/10em/accent!45/Bateau dragon
+}
+
+%% Changer pour la colonne de droite. Cela passera automatiquement à la deuxième
+%% page si le contenu est trop long.
+\switchcolumn
+\newpage
+
+\cvsection{Langues}
+\cvskill{Français}{5}
+\textit{Voltaire 765}
+\smallbreak
+\cvskill{Anglais}{4.5}
+\textit{TOEIC 980}
+\smallbreak
+\cvskill{Chinois}{2.5}
+\smallbreak
+\cvskill{Japonais}{1.5}
+\smallbreak
+\cvskill{Espagnol}{1}
+
+\cvsection{Education}
+\cvevent{École d'ingénieur}{ESIEE Paris}{2016 -- 2019}{}
+Data, Réseaux et Internet des objets avec mention
+\smallbreak
+\divider
+\cvevent{Université Technologique}{Université de Technologie de Créteil-Vitry}{2014 -- 2016}{}
+Diplôme de Réseaux et Télécommunication avec mention
+\smallbreak
+\divider
+\cvevent{Lycée}{Lycée Saint-Exupéry}{2011 -- 2014}{}
+Diplôme scientifique avec mention bien (spécialisation en ingénierie)
+
+\cvsection{Certifications}
+\cvsubsection{Cisco, 2015 -- 2016}
+\begin{itemize}
+  \item CCNA 1: Introduction to Networks
+  \item CCNA 3: Scaling Networks
+\end{itemize}
+
+\end{paracol}
+\end{document}
